@@ -5,17 +5,19 @@ let result = document.getElementById('number');
 let contador = 0;
 
 
-addButton.addEventListener('click', ()=> {
-  contador ++;
-  result.innerHTML = `<p>${contador}</p>`;
+addButton.addEventListener('click', () => {
+    contador++;
+    result.innerHTML = contador;
 });
 
-delButton.addEventListener('click', ()=>{
-    contador --;
-    result.innerHTML = `<p>${contador}</p>`;
+delButton.addEventListener('click', () => {
+    if (contador > 0) {
+        contador--;
+    }
+    result.innerHTML = contador;
 });
 
-resetButton.addEventListener('click', ()=>{
+resetButton.addEventListener('click', () => {
     contador = 0;
-    result.innerHTML = `<p>${contador}</p>`;
+    result.innerHTML = contador;
 })
