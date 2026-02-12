@@ -3,52 +3,52 @@ const delButton = document.getElementById('del');
 const resetButton = document.getElementById('reset');
 let result = document.getElementById('number');
 
-let contador = parseInt(localStorage.getItem('meuContador')) || 0;
-let colors = JSON.parse(localStorage.getItem('cores')) || {};
+let counter = parseInt(localStorage.getItem('myCounter')) || 0;
+let colors = JSON.parse(localStorage.getItem('colors')) || {};
 
-result.innerHTML = contador;
-atualizarCor();
+result.innerHTML = counter;
+updateColor();
 
 addButton.addEventListener('click', () => {
-    contador++;
-    atualizar();
+    counter++;
+    update();
 });
 
 delButton.addEventListener('click', () => {
-    if (contador > 0) {
-        contador--;
+    if (counter > 0) {
+        counter--;
     }
-    atualizar();
+    update();
 });
 
 resetButton.addEventListener('click', () => {
-    contador = 0;
+    counter = 0;
     colors = {};
-    atualizar();
+    update();
 });
 
-function atualizar() {
-    result.innerHTML = contador;
-    atualizarCor();
-    localStorage.setItem('meuContador', contador);
-    localStorage.setItem('cores', JSON.stringify(colors));
+function update() {
+    result.innerHTML = counter;
+    updateColor();
+    localStorage.setItem('myCounter', counter);
+    localStorage.setItem('colors', JSON.stringify(colors));
 }
 
-function gerarCorAleatoria() {
-    const letras = '0123456789ABCDEF';
-    let cor = '#';
+function generateRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
     for (let i = 0; i < 6; i++) {
-        cor += letras[Math.floor(Math.random() * 16)];
+        color += letters[Math.floor(Math.random() * 16)];
     }
-    return cor;
+    return color;
 }
 
-function atualizarCor() {
-    let grupo = Math.floor(contador / 50);
+function updateColor() {
+    let group = Math.floor(counter / 50);
 
-    if (!colors[grupo]) {
-        colors[grupo] = gerarCorAleatoria();
+    if (!colors[group]) {
+        colors[group] = generateRandomColor();
     }
 
-    result.style.color = colors[grupo];
+    result.style.color = colors[group];
 }
