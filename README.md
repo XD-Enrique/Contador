@@ -25,6 +25,10 @@ Este projeto é um contador interativo que permite:
    - **-** para diminuir o contador (mínimo 0)
    - **RESET** para voltar a 0
 
+## Visualização
+
+![Contador](./assets/img/counter.png)
+
 ## Estrutura do Projeto
 
 ```
