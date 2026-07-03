@@ -12,6 +12,7 @@ updateColor();
 addButton.addEventListener('click', () => {
     counter++;
     update();
+    addButton.blur()
 });
 
 delButton.addEventListener('click', () => {
@@ -19,6 +20,7 @@ delButton.addEventListener('click', () => {
         counter--;
     }
     update();
+    delButton.blur()
 });
 
 resetButton.addEventListener('click', () => {
