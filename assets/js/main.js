@@ -1,6 +1,7 @@
 const addButton = document.getElementById('add');
 const delButton = document.getElementById('del');
 const resetButton = document.getElementById('reset');
+const startButton = document.getElementById('start');
 let result = document.getElementById('number');
 
 let counter = parseInt(localStorage.getItem('myCounter')) || 0;
@@ -29,6 +30,10 @@ resetButton.addEventListener('click', () => {
     update();
 });
 
+startButton.addEventListener('click',() => {
+    timer();
+})
+
 function update() {
     result.innerHTML = counter;
     updateColor();
@@ -53,4 +58,15 @@ function updateColor() {
     }
 
     result.style.color = colors[group];
+}
+
+function timer(){
+    var sec = 10;
+    var timer = setInterval(function(){
+        document.getElementById('realTimer').innerHTML='00:'+sec;
+        sec--;
+        if (sec < 0) {
+            clearInterval(timer);
+        }
+    }, 1000);
 }
