@@ -77,7 +77,7 @@ function countdown() {
 function timer() {
     let sec = 10;
     let timer = setInterval(function () {
-        document.getElementById('realTimer').innerHTML = '00:' + sec;
+        document.getElementById('realTimer').innerHTML = sec;
         sec--;
         if (sec < 0) {
             clearInterval(timer);
