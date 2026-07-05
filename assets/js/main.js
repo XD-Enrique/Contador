@@ -6,6 +6,7 @@ let result = document.getElementById('number');
 
 let counter = parseInt(localStorage.getItem('myCounter')) || 0;
 let colors = JSON.parse(localStorage.getItem('colors')) || {};
+let gameOn = false;
 
 result.innerHTML = counter;
 updateColor();
