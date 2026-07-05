@@ -60,13 +60,13 @@ function updateColor() {
     result.style.color = colors[group];
 }
 
-function countdown(){
+function countdown() {
     let sec = 3;
-    let timeCD = setInterval (function(){
+    let timeCD = setInterval(function () {
         document.getElementById('realTimer').innerHTML = sec;
         sec--;
 
-        if (sec < 0){
+        if (sec < 0) {
             clearInterval(timeCD);
             document.getElementById('realTimer').innerHTML = "GO!";
             timer();
@@ -74,10 +74,10 @@ function countdown(){
     }, 1000);
 }
 
-function timer(){
+function timer() {
     let sec = 10;
-    let timer = setInterval(function(){
-        document.getElementById('realTimer').innerHTML='00:'+sec;
+    let timer = setInterval(function () {
+        document.getElementById('realTimer').innerHTML = '00:' + sec;
         sec--;
         if (sec < 0) {
             clearInterval(timer);
