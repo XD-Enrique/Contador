@@ -30,9 +30,9 @@ resetButton.addEventListener('click', () => {
     update();
 });
 
-startButton.addEventListener('click',() => {
-    timer();
-})
+startButton.addEventListener('click', () => {
+    countdown();
+});
 
 function update() {
     result.innerHTML = counter;
@@ -60,8 +60,22 @@ function updateColor() {
     result.style.color = colors[group];
 }
 
+function countdown(){
+    let sec = 3;
+    let timeCD = setInterval (function(){
+        document.getElementById('realTimer').innerHTML = sec;
+        sec--;
+
+        if (sec < 0){
+            clearInterval(timeCD);
+            document.getElementById('realTimer').innerHTML = "GO!";
+            timer();
+        }
+    }, 1000);
+}
+
 function timer(){
-    let sec = 9;
+    let sec = 10;
     let timer = setInterval(function(){
         document.getElementById('realTimer').innerHTML='00:'+sec;
         sec--;
