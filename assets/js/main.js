@@ -61,8 +61,8 @@ function updateColor() {
 }
 
 function timer(){
-    var sec = 10;
-    var timer = setInterval(function(){
+    let sec = 9;
+    let timer = setInterval(function(){
         document.getElementById('realTimer').innerHTML='00:'+sec;
         sec--;
         if (sec < 0) {
