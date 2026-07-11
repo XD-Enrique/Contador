@@ -35,6 +35,7 @@ resetButton.addEventListener('click', () => {
 });
 
 startButton.addEventListener('click', () => {
+    startButton.disabled = true;
     cpsClicks = 0;
     cpsDisplay.innerHTML = cpsClicks;
     countdown();
@@ -76,11 +77,9 @@ function updateColor() {
 
 function countdown() {
     let sec = 3;
-    
     let timeCD = setInterval(function () {
         document.getElementById('realTimer').innerHTML = sec;
         sec--;
-
         if (sec < 0) {
             clearInterval(timeCD);
             document.getElementById('realTimer').innerHTML = "GO!";
@@ -101,12 +100,13 @@ function timer() {
             gameOn = false;
             ClicksPerSec();
             cpstButton.textContent = '🔴';
+            startButton.disabled = false;
         }
     }, 1000);
 }
 
 function ClicksPerSec() {
-let speedResult;
-speedResult = cpsClicks / 5;
-cpsDisplay.innerHTML = speedResult;
+    let speedResult;
+    speedResult = cpsClicks / 5;
+    cpsDisplay.innerHTML = speedResult;
 }
