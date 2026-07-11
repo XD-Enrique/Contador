@@ -7,54 +7,67 @@
 
 body {
     background: rgba(3, 40, 70, 0.616);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 40px; /* Cria um respiro entre os dois blocos */
+    flex-wrap: wrap; /* Se a tela for pequena, um bloco desce elegantemente */
+    padding: 20px;
 }
 
-.timer{
+.container, .timer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: white; 
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     gap: 20px;
-    min-width: 300px;
+    min-width: 320px;
+    text-align: center;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    gap: 20px;
-    min-width: 300px;
-}
-
-h1 {
+h1, h2 {
     color: #333;
     font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-#number {
+/* Padronizando os números gigantes do contador e do minigame */
+#number, #cpsNumber {
     font-size: 5rem;
     font-weight: bold;
     color: rgba(3, 40, 70, 0.616);
+    line-height: 1;
+}
+
+#realTimer {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #d8000c;
+    background-color: #ffcccc;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+/* Alinhamento dos grupos de botões */
+.btn, .timerBtn {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column; /* Coloca o Start em cima do botão de clique */
+    align-items: center;
 }
 
 .btn {
-    display: flex;
-    gap: 15px;
+    flex-direction: row; /* Mantém os botões do contador padrão lado a lado */
 }
 
+/* Botões Genéricos */
 button {
     background-color: #f0f0f0;
     border: none;
@@ -62,7 +75,7 @@ button {
     font-size: 1.2rem;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.2s ease-in-out;
     font-weight: bold;
     color: #555;
 }
@@ -70,7 +83,12 @@ button {
 button:hover {
     background-color: rgba(3, 40, 70, 0.616);
     color: white;
-    transform: translateY(-2px);
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: translateY(0); 
 }
 
 #reset {
@@ -83,21 +101,32 @@ button:hover {
     color: white;
 }
 
-#start{
-    display: flex;
-    flex-direction: column;
-    align-items: center;  
-    gap: 20px;
-    min-width: 200px;
+#start {
+    background-color: #28a745;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#start:hover {
+    background-color: #218838;
 }
 
 #cpsBtn {
+    font-size: 3rem; 
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; 
     display: flex;
-    flex-direction: column;
-    align-items: center;  
-    padding: 100px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    gap: 20px;
-    min-width: 200px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: 0.1s; 
+}
+
+#cpsBtn:active {
+    transform: scale(0.9); 
 }
