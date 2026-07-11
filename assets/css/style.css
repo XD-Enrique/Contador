@@ -88,16 +88,16 @@ button:hover {
     flex-direction: column;
     align-items: center;  
     gap: 20px;
-    min-width: 300px;
+    min-width: 200px;
 }
 
 #cpsBtn {
     display: flex;
     flex-direction: column;
     align-items: center;  
-    padding: 40px;
+    padding: 100px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     gap: 20px;
-    min-width: 300px;
+    min-width: 200px;
 }
