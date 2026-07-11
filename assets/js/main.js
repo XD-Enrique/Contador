@@ -71,7 +71,6 @@ function updateColor() {
     if (!colors[group]) {
         colors[group] = generateRandomColor();
     }
-
     result.style.color = colors[group];
 }
 
