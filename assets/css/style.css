@@ -130,3 +130,12 @@ button:active {
 #cpsBtn:active {
     transform: scale(0.9); 
 }
+
+/* Estilo para quando qualquer botão estiver desabilitado */
+button:disabled {
+    background-color: #cccccc !important;
+    color: #888888 !important;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
