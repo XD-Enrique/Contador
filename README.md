@@ -41,6 +41,9 @@ O contador também mantém o valor atual e as cores dos grupos de números entre
    - Clique no botão **🟢** o mais rápido possível durante 5 segundos
    - Veja o resultado em cliques por segundo
 
+Ou acesse:
+[Contador](https://xd-enrique.github.io/Contador/)
+
 ## Visualização
 
 ![Contador](./assets/img/counter.png)
